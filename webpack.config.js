@@ -14,7 +14,6 @@ module.exports = function(env, options) {
         mode: options.mode,
         // Fail fast on first error encountered during production builds.
         bail: !isDevelopment,
-        // TODO: Use lightweight source-mapping in prod? test bundle size diff.
         devtool: isDevelopment
             ? 'cheap-module-source-map'
             : 'source-map',
@@ -24,7 +23,6 @@ module.exports = function(env, options) {
         entry: path.resolve(__dirname, 'src/index.js'),
         output: {
             path: path.resolve(__dirname, 'build'),
-            // TODO: DON'T use hashing in dev
             filename: isDevelopment
                 ? '[name].chunk.js'
                 : '[name].[contenthash:8].chunk.js',
@@ -135,6 +133,8 @@ module.exports = function(env, options) {
             // Removes all files in the output.path directory on successive,
             // successful builds.
             new CleanWebpackPlugin(),
+            // Lints the application's scss files against stylelint settings
+            // defined in package.json.
             new StyleLintPlugin({
                 syntax: 'scss'
             }),
@@ -144,8 +144,9 @@ module.exports = function(env, options) {
                     ? '[name].css'
                     : '[name].[hash].css'
             }),
-            // Generates the index.html file using our pre-defined template and
-            // injects the bundled js script tag at the bottom of the body.
+            // Generates the index.html file using a pre-defined template and
+            // injects a script tag at the bottom of the body referencing the
+            // bundled js entry file.
             new HtmlWebpackPlugin(Object.assign(
                 {
                     template: path.resolve(__dirname, 'public/index.html')
