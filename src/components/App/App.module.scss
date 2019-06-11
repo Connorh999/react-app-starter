@@ -1,0 +1,27 @@
+@import '../Demo.module.scss';
+
+.root {
+    background-color: #181818;
+}
+
+.text {
+    color: #eee;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.image {
+    background-image: url('./test.png');
+    background-size: cover;
+    height: 100vh;
+}
+
+.smallImage {
+    // This image will end up as a base64 encoded data url instead of an asset
+    // served from a server.
+    background-image: url('./less-than-10kb.png');
+    background-size: cover;
+    height: 24px;
+    width: 32px;
+}
