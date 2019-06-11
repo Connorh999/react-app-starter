@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const postcssPresetEnv = require('postcss-preset-env');
 const getCSSModuleLocalIdent = require('react-dev-utils/getCSSModuleLocalIdent');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = function(env, options) {
     const isDevelopment = options.mode === 'development';
@@ -134,6 +135,9 @@ module.exports = function(env, options) {
             // Removes all files in the output.path directory on successive,
             // successful builds.
             new CleanWebpackPlugin(),
+            new StyleLintPlugin({
+                syntax: 'scss'
+            }),
             new MiniCssExtractPlugin({
                 // TODO: figure out right filename + chunkFilename
                 filename: isDevelopment
