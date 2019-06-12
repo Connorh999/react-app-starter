@@ -30,6 +30,7 @@ module.exports = function(env, options) {
             // output.
             pathinfo: isDevelopment
         },
+        // TODO: favicon loader, font loader
         module: {
             rules: [
                 // Lint any es6+ source code.
