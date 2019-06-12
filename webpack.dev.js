@@ -13,7 +13,10 @@ module.exports = merge(baseConfig, {
     bail: false,
     devtool: 'cheap-module-source-map',
     devServer: {
-        port: 3000
+        port: 3000,
+        open: true,
+        hot: true,
+        overlay: true
     },
     output: {
         filename: 'js/[name].chunk.js',

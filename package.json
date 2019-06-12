@@ -4,7 +4,7 @@
     "description": "A shell project for react applications.",
     "private": true,
     "scripts": {
-        "start": "webpack-dev-server --open --hot --config webpack.dev.js",
+        "start": "webpack-dev-server --config webpack.dev.js",
         "build": "webpack --config webpack.prod.js",
         "test": "echo \"Error: no test specified\" && exit 1",
         "lint": "npm run lint:style && npm run lint:js",

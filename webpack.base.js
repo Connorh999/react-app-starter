@@ -32,7 +32,7 @@ module.exports = {
         // successful builds.
         new CleanWebpackPlugin(),
         // Lints the application's scss files against stylelint settings
-        // defined in package.json.
+        // defined in .stylelintrc.json.
         new StyleLintPlugin({
             syntax: 'scss'
         })
