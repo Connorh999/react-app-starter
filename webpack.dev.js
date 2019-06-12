@@ -1,5 +1,5 @@
 const path = require('path');
-
+const HotModuleReplacementPlugin = require('webpack').HotModuleReplacementPlugin;
 const merge = require('webpack-merge');
 const baseConfig = require('./webpack.base.js');
 
@@ -110,7 +110,7 @@ module.exports = merge(baseConfig, {
         // TODO: CaseSensitivePathsPlugin
         // TODO: WatchMissingNodeModulesPlugin
         // TODO: webpack.IgnorePlugin
-        //
+        new HotModuleReplacementPlugin(),
         // Generates the index.html file using a pre-defined template and
         // injects a script tag at the bottom of the body referencing the
         // bundled js entry file.
