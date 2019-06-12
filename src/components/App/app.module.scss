@@ -1,4 +1,4 @@
-@import '../Demo.module.scss';
+@import '../importMe.module.scss';
 
 .root {
     background-color: #181818;
@@ -12,14 +12,14 @@
 }
 
 .image {
-    background-image: url('./test.png');
+    background-image: url('./code-image.png');
     background-size: cover;
     height: 100vh;
 }
 
 .smallImage {
-    // This image will end up as a base64 encoded data url instead of an asset
-    // served from a server.
+    // This image will end up as an embedded, base64 encoded data url instead
+    // of a path to the corresponding asset in the build.
     background-image: url('./less-than-10kb.png');
     background-size: cover;
     height: 24px;
