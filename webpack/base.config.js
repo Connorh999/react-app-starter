@@ -5,9 +5,6 @@ const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
     entry: paths.indexJs,
-    output: {
-        path: paths.build
-    },
     module: {
         rules: [
             // Lint any es6+ source code.
@@ -16,14 +13,19 @@ module.exports = {
                 include: paths.src,
                 loader: 'eslint-loader',
                 // Enforce this as a pre-loader so that linting occurs
-                // before attempting to transpile anything.
+                // before anything else.
                 enforce: 'pre'
             },
             // Transpile es6+ source code with babel.
             {
                 test: /\.jsx?$/,
                 include: paths.src,
-                loader: 'babel-loader'
+                loader: 'babel-loader',
+                options: {
+                    // Cache the results of the loader for faster rebuilds.
+                    // https://webpack.js.org/loaders/babel-loader/
+                    cacheDirectory: true
+                }
             },
             // Process images.
             {

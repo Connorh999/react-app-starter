@@ -4,7 +4,7 @@ const paths = require('./paths.js');
 const baseConfig = require('./base.config.js');
 const getStyleLoaders = require('./getStyleLoaders.js');
 
-const HotModuleReplacementPlugin = require('webpack').HotModuleReplacementPlugin;
+const { HotModuleReplacementPlugin } = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = merge(baseConfig, {
@@ -17,12 +17,12 @@ module.exports = merge(baseConfig, {
         overlay: true
     },
     output: {
-        filename: 'js/[name].chunk.js',
+        filename: 'js/bundle.js',
+        chunkFilename: 'js/[name].chunk.js',
         // Add /* filename */ comments to generated require()s in the
         // output.
         pathinfo: true
     },
-    // TODO: favicon loader, font loader
     module: {
         rules: [
             // Process styles.
@@ -35,11 +35,6 @@ module.exports = merge(baseConfig, {
         ]
     },
     plugins: [
-        // TODO: ModuleNotFoundPlugin
-        // TODO: webpack.HotModuleReplacementPlugin
-        // TODO: CaseSensitivePathsPlugin
-        // TODO: WatchMissingNodeModulesPlugin
-        // TODO: webpack.IgnorePlugin
         new HotModuleReplacementPlugin(),
         // Generates the index.html file using a pre-defined template and
         // injects script + link tags to load the bundled js and favicon.

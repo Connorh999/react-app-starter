@@ -13,9 +13,7 @@ module.exports = ({
             options: {
                 // Let css-loader know there are 2 other loaders applied before it
                 // in the chain so that any @import './styles' will also get them
-                // applied. (TODO: Pretty sure this is only necessary for css, not
-                // scss, since imports are inlined by sass-loader before this in
-                // the chain).
+                // applied.
                 importLoaders: 2,
                 // Enable css-modules.
                 modules: true,
@@ -26,7 +24,6 @@ module.exports = ({
             }
         },
         // Applies vendor prefixing based on browserslist.
-        // TODO: postcss-flexbugs-fixes? postcss-normalize/sanitize?
         {
             loader: 'postcss-loader',
             options: {

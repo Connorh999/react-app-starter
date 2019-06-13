@@ -16,12 +16,3 @@
     background-size: cover;
     height: 100vh;
 }
-
-.smallImage {
-    // This image will end up as an embedded, base64 encoded data url instead
-    // of a path to the corresponding asset in the build.
-    background-image: url('./less-than-10kb.png');
-    background-size: cover;
-    height: 24px;
-    width: 32px;
-}

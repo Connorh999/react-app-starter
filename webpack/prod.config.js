@@ -13,9 +13,10 @@ module.exports = merge(baseConfig, {
     bail: true,
     devtool: 'source-map',
     output: {
-        filename: 'js/[name].[contenthash:8].chunk.js',
+        path: paths.build,
+        filename: 'js/[name].[contenthash:8].js',
+        chunkFilename: 'js/[name].[contenthash:8].chunk.js'
     },
-    // TODO: favicon loader, font loader
     module: {
         rules: [
             // Process styles.
@@ -42,26 +43,15 @@ module.exports = merge(baseConfig, {
             }
         ]
     },
-    optimization: {
-        // TODO: optimize css assets plugin
-        // TODO: terser plugin?
-    },
     plugins: [
-        // TODO: Add ImageminWebpackPlugin
-        // TODO: ModuleNotFoundPlugin
-        // TODO: webpack.HotModuleReplacementPlugin
-        // TODO: CaseSensitivePathsPlugin
-        // TODO: WatchMissingNodeModulesPlugin
-        // TODO: webpack.IgnorePlugin
         new MiniCssExtractPlugin({
-            // TODO: figure out right filename + chunkFilename
-            filename: 'css/[name].[hash].css'
+            filename: 'css/[name].[contenthash:8].css',
+            chunkFilename: 'css/[name].[contenthash:8].chunk.css'
         }),
         // Generates the index.html file using a pre-defined template and
         // injects script + link tags to load the bundled js and favicon.
         new HtmlWebpackPlugin({
             template: paths.indexHtml,
-            // TODO: cache busting for favicon?
             favicon: paths.favicon,
             minify: {
                 collapseWhitespace: true,
