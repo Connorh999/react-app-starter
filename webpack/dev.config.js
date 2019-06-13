@@ -42,10 +42,10 @@ module.exports = merge(baseConfig, {
         // TODO: webpack.IgnorePlugin
         new HotModuleReplacementPlugin(),
         // Generates the index.html file using a pre-defined template and
-        // injects a script tag at the bottom of the body referencing the
-        // bundled js entry file.
-        new HtmlWebpackPlugin(Object.assign({
-            template: paths.indexHtml
-        }))
+        // injects script + link tags to load the bundled js and favicon.
+        new HtmlWebpackPlugin({
+            template: paths.indexHtml,
+            favicon: paths.favicon
+        })
     ]
 });

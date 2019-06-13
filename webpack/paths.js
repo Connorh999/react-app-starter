@@ -9,6 +9,7 @@ const resolveProjectPath = (relativePath) => {
 
 module.exports = {
     projectRoot,
+    favicon: resolveProjectPath('public/favicon.ico'),
     indexHtml: resolveProjectPath('public/index.html'),
     indexJs: resolveProjectPath('src/index.js'),
     build: resolveProjectPath('build'),
