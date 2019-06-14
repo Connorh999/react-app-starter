@@ -22,6 +22,7 @@ this bug https://github.com/stylelint/stylelint/issues/4109.
     - Object.assign
 	- array methods (includes...)
 - jest
+- bundlesize
 - pre-commit hooks (linting)
 - webpack.progressPlugin
 - \[css-loader - loaderImports\] Pretty sure this is only necessary for css not scss, since imports are inlined by sass-loader before this in the chain.

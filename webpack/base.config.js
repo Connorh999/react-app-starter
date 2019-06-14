@@ -27,15 +27,20 @@ module.exports = {
                     cacheDirectory: true
                 }
             },
-            // Process images.
+            // Copies images into the build and resolves their asset paths
+            // accordingly.
             {
                 test: /\.(gif|jpe?g|png|svg)$/,
-                // Copies images referenced by import/url() into the build and
-                // resolves their asset paths accordingly.
                 loader: 'file-loader',
                 options: {
                     name: 'images/[name].[hash:8].[ext]'
                 }
+            },
+            // Copies fonts into the build and resolves their asset paths
+            // accordingly.
+            {
+                test: /\.(woff2?|eot|ttf|otf)$/,
+                loader: 'font-loader'
             }
         ]
     },
