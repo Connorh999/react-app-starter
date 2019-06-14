@@ -12,16 +12,13 @@ this bug https://github.com/stylelint/stylelint/issues/4109.
 - jsconfig.json
 
 
-- font loading (base)
+- @babel/plugin-proposal-object-rest-spread
+- @babel/plugin-transform-runtime
+- @babel/polyfill
+- jest
 - add ImageminWebpackPlugin (prod)
 - bundle analyzer plugin
 - sanitize/normalize css?
-- polyfills (babel-polyfill)
-	- fetch
-	- promise
-    - Object.assign
-	- array methods (includes...)
-- jest
 - bundlesize
 - pre-commit hooks (linting)
 - webpack.progressPlugin
