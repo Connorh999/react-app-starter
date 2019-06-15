@@ -12,10 +12,9 @@ this bug https://github.com/stylelint/stylelint/issues/4109.
 - jsconfig.json
 
 
-- @babel/plugin-proposal-object-rest-spread
-- @babel/plugin-transform-runtime
-- @babel/polyfill
 - jest
+- @babel/plugin-proposal-object-rest-spread
+- add support for es6 generators standard (regenerator-runtime, babel/runtime, babel/transform-runtime)
 - add ImageminWebpackPlugin (prod)
 - bundle analyzer plugin
 - sanitize/normalize css?
