@@ -3,7 +3,6 @@ const getCSSModuleLocalIdent = require('react-dev-utils/getCSSModuleLocalIdent')
 
 module.exports = ({
     prependLoaders = [],
-    appendLoaders = [],
     enableSourceMap = false
 }) => {
     return prependLoaders.concat([
@@ -46,5 +45,5 @@ module.exports = ({
                 sourceMap: enableSourceMap
             }
         }
-    ]).concat(appendLoaders);
+    ]);
 };
