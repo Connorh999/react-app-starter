@@ -37,7 +37,7 @@ module.exports = merge(baseConfig, {
     plugins: [
         new HotModuleReplacementPlugin(),
         // Generates the index.html file using a pre-defined template and
-        // injects script + link tags to load the bundled js and favicon.
+        // automatically injects any generated bundles.
         new HtmlWebpackPlugin({
             template: paths.indexHtml,
             favicon: paths.favicon
