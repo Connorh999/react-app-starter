@@ -29,7 +29,7 @@ module.exports = merge(baseConfig, {
             {
                 test: /\.module\.scss$/,
                 use: getStyleLoaders({
-                    prependLoaders: [ 'style-loader' ]
+                    prependLoaders: [ require.resolve('style-loader') ]
                 })
             }
         ]

@@ -6,21 +6,31 @@ const StyleLintPlugin = require('stylelint-webpack-plugin');
 module.exports = {
     entry: paths.indexJs,
     module: {
+        // Makes missing exports an error instead of warning.
+        strictExportPresence: true,
         rules: [
+            {
+                parser: {
+                    requireEnsure: false
+                }
+            },
             // Lint any es6+ source code.
             {
                 test: /\.jsx?$/,
-                include: paths.src,
-                loader: 'eslint-loader',
+                exclude: /node_modules/,
+                loader: require.resolve('eslint-loader'),
                 // Enforce this as a pre-loader so that linting occurs
                 // before anything else.
-                enforce: 'pre'
+                enforce: 'pre',
+                options: {
+                    eslintPath: require.resolve('eslint')
+                }
             },
             // Transpile es6+ source code with babel.
             {
                 test: /\.jsx?$/,
                 include: paths.src,
-                loader: 'babel-loader',
+                loader: require.resolve('babel-loader'),
                 options: {
                     // Cache the results of the loader for faster rebuilds.
                     // https://webpack.js.org/loaders/babel-loader/
@@ -31,7 +41,7 @@ module.exports = {
             // accordingly.
             {
                 test: /\.(gif|jpe?g|png|svg)$/,
-                loader: 'file-loader',
+                loader: require.resolve('file-loader'),
                 options: {
                     name: 'images/[name].[hash:8].[ext]'
                 }
@@ -40,7 +50,7 @@ module.exports = {
             // accordingly.
             {
                 test: /\.(woff2?|eot|ttf|otf)$/,
-                loader: 'file-loader'
+                loader: require.resolve('file-loader')
             }
         ]
     },
