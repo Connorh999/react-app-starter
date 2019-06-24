@@ -4,24 +4,78 @@ For the few scenarios where create-react-app just isn't quite enough. Heavily in
 ### TODOs:
 - Add `"ignore": "comments"` to the `"block-no-empty"` once stylelint fixes
 this bug https://github.com/stylelint/stylelint/issues/4109.
-- capabilities explained
 - demonstrate features in example app
-- how to run/build/test/lint
 - devDependencies explained
-- Editor integration guide (i.e. vscode stylelint plugin)
-- jsconfig.json
-
-
+- jsconfig.json, .editorconfig
 - jest
-- @babel/plugin-proposal-object-rest-spread
+- plugin-proposal-object-rest-spread, plugin-proposal-class-properties
 - add support for es6 generators standard (regenerator-runtime, babel/runtime, babel/transform-runtime)
 - add ImageminWebpackPlugin (prod)
 - bundle analyzer plugin
 - sanitize/normalize css?
+- implement code-splitting
 - bundlesize
 - pre-commit hooks (linting)
 - webpack.progressPlugin
-- \[css-loader - loaderImports\] Pretty sure this is only necessary for css not scss, since imports are inlined by sass-loader before this in the chain.
 - should postcss-flexbugs-fixes loader plugin be used?
 - verify out-of-the-box webpack4 optimization settings.
 - Need to add cache busting for favicon?
+- setup backend api proxy capability
+- upgrade to css-loader 3+ (breaking changes w css module names)
+
+## Getting Started
+- project structure
+- coding style & best practices
+- install pnpm
+    - explain why
+- editor integration (vscode, intellij, webstorm?, othes?)
+    - stylelint integration
+    - eslint integration
+- browser extensions
+    - json viewer
+    - react
+    - react-redux
+
+## Developer Workflow
+TBD
+
+## Scripts & Commands
+- start
+- build (auto-cleaned)
+- stylelint
+- eslint
+- test
+- analyze
+- pnpm specific commands (recursive, filtering, etc.)
+
+## Project Features
+- Browser Support
+    - browserslist
+- es2015+ transpilation
+    - add example
+    - call out some useful/common es6 features?
+- source mapping
+    - 'source-map' vs. 'cheap-module-source-map'
+- css modules
+    - naming convention (camelCase, "root")
+- hot reloading
+    - how to configure
+- eslint
+    - how to configure
+- stylelint
+    - how to configure
+- html-webpack-plugin
+- production file caching
+- font loading
+- image loading
+    - imagemin
+- publishing/versioning
+- jest
+- bundle analysis
+- ci/cd & deployment
+- \[TBD\] connecting a backend (proxy)
+
+## FAQ
+- how do I add/remove/update a package?
+- why pnpm?
+
