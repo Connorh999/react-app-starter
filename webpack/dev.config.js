@@ -29,7 +29,11 @@ module.exports = merge(baseConfig, {
             {
                 test: /\.module\.scss$/,
                 use: getStyleLoaders({
-                    prependLoaders: [ require.resolve('style-loader') ]
+                    // Prepend the style loader so that it's the last loader in
+                    // the chain. In development, style-loader will take the
+                    // generated css output and inject it into the <head/> to
+                    // support hot reloading.
+                    prependLoaders: [ 'style-loader' ]
                 })
             }
         ]

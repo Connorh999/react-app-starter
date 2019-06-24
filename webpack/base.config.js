@@ -10,6 +10,7 @@ module.exports = {
         strictExportPresence: true,
         rules: [
             {
+                // Disable non-standard language feature "ensure".
                 parser: {
                     requireEnsure: false
                 }
@@ -18,19 +19,19 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
-                loader: require.resolve('eslint-loader'),
+                loader: 'eslint-loader',
                 // Enforce this as a pre-loader so that linting occurs
                 // before anything else.
                 enforce: 'pre',
                 options: {
-                    eslintPath: require.resolve('eslint')
+                    eslintPath: 'eslint'
                 }
             },
             // Transpile es6+ source code with babel.
             {
                 test: /\.jsx?$/,
                 include: paths.src,
-                loader: require.resolve('babel-loader'),
+                loader: 'babel-loader',
                 options: {
                     // Cache the results of the loader for faster rebuilds.
                     // https://webpack.js.org/loaders/babel-loader/
@@ -41,7 +42,7 @@ module.exports = {
             // accordingly.
             {
                 test: /\.(gif|jpe?g|png|svg)$/,
-                loader: require.resolve('file-loader'),
+                loader: 'file-loader',
                 options: {
                     name: 'images/[name].[hash:8].[ext]'
                 }
@@ -50,7 +51,7 @@ module.exports = {
             // accordingly.
             {
                 test: /\.(woff2?|eot|ttf|otf)$/,
-                loader: require.resolve('file-loader')
+                loader: 'file-loader'
             }
         ]
     },

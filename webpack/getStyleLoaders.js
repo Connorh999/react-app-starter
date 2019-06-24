@@ -8,7 +8,7 @@ module.exports = ({
     return prependLoaders.concat([
         {
             // Resolves paths inside css and adds imported assets as dependencies.
-            loader: require.resolve('css-loader'),
+            loader: 'css-loader',
             options: {
                 // Let css-loader know there are 2 other loaders applied before it
                 // in the chain so that any @import './styles' will also get them
@@ -24,7 +24,7 @@ module.exports = ({
         },
         // Applies vendor prefixing based on browserslist.
         {
-            loader: require.resolve('postcss-loader'),
+            loader: 'postcss-loader',
             options: {
                 ident: 'postcss',
                 plugins: () => [
@@ -40,7 +40,7 @@ module.exports = ({
         },
         // Compiles scss into css.
         {
-            loader: require.resolve('sass-loader'),
+            loader: 'sass-loader',
             options: {
                 sourceMap: enableSourceMap
             }
