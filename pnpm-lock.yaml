@@ -27,7 +27,6 @@ devDependencies:
   sass-loader: 7.1.0_webpack@4.35.0
   style-loader: 0.23.1
   stylelint: 10.1.0
-  stylelint-webpack-plugin: 0.10.5_stylelint@10.1.0+webpack@4.35.0
   webpack: 4.35.0_webpack@4.35.0
   webpack-cli: 3.3.5_webpack@4.35.0
   webpack-dev-server: 3.7.2_webpack@4.35.0
@@ -6512,10 +6511,6 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-Q2CxfGETatOAeDl/8RQW4Ybc+7g=
-  /ramda/0.25.0:
-    dev: true
-    resolution:
-      integrity: sha512-GXpfrYVPwx3K7RQ6aYT8KPS8XViSXUVJT1ONhoKPE9VAleW42YE+U+8VEyGWt41EnEQW7gwecYJriTI0pKoecQ==
   /randombytes/2.1.0:
     dependencies:
       safe-buffer: 5.1.2
@@ -7663,22 +7658,6 @@ packages:
     dev: true
     resolution:
       integrity: sha1-eVjHk+R+MuB9K1yv5cC/jhLneQI=
-  /stylelint-webpack-plugin/0.10.5_stylelint@10.1.0+webpack@4.35.0:
-    dependencies:
-      arrify: 1.0.1
-      micromatch: 3.1.10
-      object-assign: 4.1.1
-      ramda: 0.25.0
-      stylelint: 10.1.0
-      webpack: 4.35.0_webpack@4.35.0
-    dev: true
-    engines:
-      node: '>= 6.9.0'
-    peerDependencies:
-      stylelint: ^8.0.0
-      webpack: ^1.13.2 || ^2.7.0 || ^3.11.0 || ^4.4.0
-    resolution:
-      integrity: sha512-jtYx3aJ2qDMvBMswe5NRPTO7kJgAKafc6GilAkWDp/ewoAmnoxA6TsYMnIPtLECRLwXevaCPvlh2JEUMGZCoUQ==
   /stylelint/10.1.0:
     dependencies:
       autoprefixer: 9.6.0
@@ -8620,7 +8599,6 @@ specifiers:
   sass-loader: ^7.1.0
   style-loader: ^0.23.1
   stylelint: ^10.1.0
-  stylelint-webpack-plugin: ^0.10.5
   webpack: ^4.34.0
   webpack-cli: ^3.3.4
   webpack-dev-server: ^3.7.1

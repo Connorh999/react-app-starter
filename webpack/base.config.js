@@ -1,7 +1,6 @@
 const paths = require('./paths');
 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
     entry: paths.indexJs,
@@ -58,11 +57,6 @@ module.exports = {
     plugins: [
         // Removes all files in the output.path directory on successive,
         // successful builds.
-        new CleanWebpackPlugin(),
-        // Lints the application's scss files against stylelint settings
-        // defined in .stylelintrc.json.
-        new StyleLintPlugin({
-            syntax: 'scss'
-        })
+        new CleanWebpackPlugin()
     ]
 };
