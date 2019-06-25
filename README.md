@@ -7,7 +7,7 @@ For the few scenarios where create-react-app just isn't quite enough. Heavily in
 this bug https://github.com/stylelint/stylelint/issues/4109.
 - demonstrate features in example app
 - devDependencies explained
-- jsconfig.json, .editorconfig
+- jsconfig.json?
 - jest
 - plugin-proposal-object-rest-spread, plugin-proposal-class-properties
 - add support for es6 generators standard (regenerator-runtime, babel/runtime, babel/transform-runtime)
@@ -25,15 +25,20 @@ this bug https://github.com/stylelint/stylelint/issues/4109.
 - upgrade to css-loader 3+ (breaking changes w css module names)
 - add code comments to babel.config.js & eslintrc.js
 - add eslint autofix formatter (eslint-loader)
+- add .vscode/settings.json settings to source control (only things that should be enforced)
+    - eslint.packageManager: pnpm
+    - "css.validate": false, "less.validate": false, "scss.validate": false"
 
 ## Getting Started
 - project structure
 - coding style & best practices
 - install pnpm
     - explain why
-- editor integration (vscode, intellij, webstorm?, othes?)
+- editor integration (vscode, intellij, webstorm?, others?)
     - stylelint integration
     - eslint integration
+    - markdown previewer
+    - editorconfig
 - browser extensions
     - json viewer
     - react
