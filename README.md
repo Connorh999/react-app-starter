@@ -2,6 +2,7 @@
 For the few scenarios where create-react-app just isn't quite enough. Heavily influenced by create-react app.
 
 ### TODOs:
+- upgrade to eslint ^6.0.1 once they fix this bug: https://github.com/webpack-contrib/eslint-loader/issues/238
 - Add `"ignore": "comments"` to the `"block-no-empty"` once stylelint fixes
 this bug https://github.com/stylelint/stylelint/issues/4109.
 - demonstrate features in example app
@@ -22,6 +23,8 @@ this bug https://github.com/stylelint/stylelint/issues/4109.
 - Need to add cache busting for favicon?
 - setup backend api proxy capability
 - upgrade to css-loader 3+ (breaking changes w css module names)
+- add code comments to babel.config.js & eslintrc.js
+- add eslint autofix formatter (eslint-loader)
 
 ## Getting Started
 - project structure
@@ -78,4 +81,5 @@ TBD
 ## FAQ
 - how do I add/remove/update a package?
 - why pnpm?
+- why do we need to explicitly add "eslint-import-resolver-node" as a devDependency?
 
