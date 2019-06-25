@@ -1,6 +1,10 @@
 module.exports = {
+    // Mark this as the root config file so that eslint does not traverse any
+    // further up the filesystem tree looking for any parent configs.
     root: true,
     parser: 'babel-eslint',
+    // Configure the parser to support es6 standard syntax, js modules, and
+    // jsx for react.
     parserOptions: {
         ecmaVersion: 6,
         sourceType: 'module',

@@ -23,7 +23,6 @@ this bug https://github.com/stylelint/stylelint/issues/4109.
 - Need to add cache busting for favicon?
 - setup backend api proxy capability
 - upgrade to css-loader 3+ (breaking changes w css module names)
-- add code comments to babel.config.js & eslintrc.js
 - add eslint autofix formatter (eslint-loader)
 - add .vscode/settings.json settings to source control (only things that should be enforced)
     - eslint.packageManager: pnpm
