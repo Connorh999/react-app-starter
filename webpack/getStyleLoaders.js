@@ -6,8 +6,8 @@ module.exports = ({
     enableSourceMap = false
 }) => {
     return prependLoaders.concat([
+        // Resolves paths inside css and adds imported assets as dependencies.
         {
-            // Resolves paths inside css and adds imported assets as dependencies.
             loader: 'css-loader',
             options: {
                 // Let css-loader know there are 2 other loaders applied before it

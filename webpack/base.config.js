@@ -9,7 +9,7 @@ module.exports = {
         strictExportPresence: true,
         rules: [
             {
-                // Disable non-standard language feature "ensure".
+                // Disable non-standard language feature, require.ensure.
                 parser: {
                     requireEnsure: false
                 }
@@ -21,20 +21,20 @@ module.exports = {
                 loader: 'eslint-loader',
                 // Enforce this as a pre-loader so that linting occurs
                 // before anything else.
-                enforce: 'pre',
-                options: {
-                    eslintPath: 'eslint'
-                }
+                enforce: 'pre'
             },
             // Transpile es6+ source code with babel.
             {
                 test: /\.jsx?$/,
-                include: paths.src,
+                exclude: /node_modules/,
                 loader: 'babel-loader',
                 options: {
                     // Cache the results of the loader for faster rebuilds.
                     // https://webpack.js.org/loaders/babel-loader/
-                    cacheDirectory: true
+                    cacheDirectory: true,
+                    // Instruct babel to traverse parent folders for the root
+                    // babel.config.js. Only applicable in monorepo setups.
+                    rootMode: 'upward'
                 }
             },
             // Copies images into the build and resolves their asset paths
