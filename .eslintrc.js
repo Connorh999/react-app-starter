@@ -1,4 +1,5 @@
 module.exports = {
+    root: true,
     parser: 'babel-eslint',
     parserOptions: {
         ecmaVersion: 6,
@@ -13,16 +14,9 @@ module.exports = {
         'react',
         'react-hooks'
     ],
-    settings: {
-        react: {
-            version: 'detect'
-        }
-    },
     env: {
         browser: true,
-        commonjs: true,
         es6: true,
-        jest: true,
         node: true
     },
     extends: [
@@ -32,7 +26,7 @@ module.exports = {
         'plugin:react/recommended'
     ],
     rules: {
-        // Don't require explicit escaping of ['>', '"', '\'', '}'] chars.
+        // Don't require explicit escaping of ['>', '"', '\'', '}'] in jsx.
         'react/no-unescaped-entities': 'off',
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'warn'
