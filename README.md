@@ -27,6 +27,7 @@ this bug https://github.com/stylelint/stylelint/issues/4109.
 - add .vscode/settings.json settings to source control (only things that should be enforced)
     - eslint.packageManager: pnpm
     - "css.validate": false, "less.validate": false, "scss.validate": false"
+- could be useful to mention [FOUC](https://en.wikipedia.org/wiki/Flash_of_unstyled_content)
 
 ## Getting Started
 - project structure
