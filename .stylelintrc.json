@@ -9,7 +9,14 @@
         "keyframe-declaration-no-important": true,
         "declaration-block-no-duplicate-properties": true,
         "block-no-empty": true,
-        "selector-pseudo-class-no-unknown": true,
+        "selector-pseudo-class-no-unknown": [
+            true,
+            {
+                "ignorePseudoClasses": [
+                    "global"
+                ]
+            }
+        ],
         "selector-pseudo-element-no-unknown": true,
         "selector-type-no-unknown": true,
         "media-feature-name-no-unknown": true,
