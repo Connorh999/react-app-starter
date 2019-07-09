@@ -92,7 +92,8 @@
             "always",
             {
                 "except": [
-                    "after-single-line-comment"
+                    "after-single-line-comment",
+                    "first-nested"
                 ]
             }
         ],
